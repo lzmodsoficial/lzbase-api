@@ -21,8 +21,6 @@ quando bater 800 inscritos eu solto a v2 com varias novas api's :)
 ```
 
 - [Video Ensinando Como Instalar ( Clique Aqui )](https://www.youtube.com/watch?v=uevAtSsbJIU&t=12s)
-    
-- [Caso Queira Baixar o Zip Do Rest ( Clique Aqui )](https://www.mediafire.com/file/72x5a5vsugrfq6p/lz-base-api.zip/file)
  
 ----------- Para Duvidas -----------
     
