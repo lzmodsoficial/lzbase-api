@@ -63,7 +63,9 @@ router.get('/youtube/playmp3', async(req, res, next) => {
  criador: `${criador}`,
  resultado: resultado
  })}).catch(e => {
- res.sendFile(error)})})
+res.json({
+ msg: `erro no servidor interno`
+ })})})
  
  router.get('/youtube/playmp4', async(req, res, next) => {
   apikey = req.query.apikey;
@@ -77,7 +79,9 @@ router.get('/youtube/playmp3', async(req, res, next) => {
  criador: `${criador}`,
  resultado: resultado
  })}).catch(e => {
- res.sendFile(error)})})
+res.json({
+ msg: `erro no servidor interno`
+ })})})
 
  router.get('/youtube/mp3', async(req, res, next) => {
  apikey = req.query.apikey;
@@ -91,7 +95,9 @@ router.get('/youtube/playmp3', async(req, res, next) => {
  criador: `${criador}`,
  resultado: resultado
  })}).catch(e => {
- res.sendFile(error)})})
+res.json({
+ msg: `erro no servidor interno`
+ })})})
 
  router.get('/youtube/mp4', async(req, res, next) => {
    apikey = req.query.apikey;
@@ -105,7 +111,25 @@ router.get('/youtube/playmp3', async(req, res, next) => {
  criador: `${criador}`,
  resultado: resultado
  })}).catch(e => {
- res.sendFile(error)})})
+res.json({
+ msg: `erro no servidor interno`
+ })})})
+
+ router.get('/youtube/pesquisar', async(req, res, next) => {
+  apikey = req.query.apikey;
+  q = req.query.q
+ if(apikey !== key) return res.sendFile(keyinexistente)
+ if (!q) return res.json({ status : false, criador : `criador`, mensagem : "Coloque o parametro: q"})
+ ytSearch(q).then(result => {
+res.json({
+status: true,
+código: 200,
+criador: `${criador}`,
+resultado: result
+})}).catch(e => {
+  res.json({
+    msg: `erro no servidor interno`
+    })})})
 
  //[ - ///////// --- Api's Canvas --- ///////// - ]\\
 
@@ -239,6 +263,83 @@ router.get('/canvas/beautiful', async(req, res, next) => {
           res.type('png')
           res.send(await getBuffer(random))
           })
+
+//[ - ///////// --- Api's TOOLS --- ///////// - ]\\
+
+router.all('/tools/emojimix', async (req, res) => {
+apikey = req.query.apikey;
+e1 = req.query.emoji1;
+e2 = req.query.emoji2;
+if(apikey !== key) return res.sendFile(keyinexistente)
+if (!e1) return res.json({ status : false, criador : `criador`, mensagem : "Coloque o parametro: EMOJI1"})
+if (!e2) return res.json({ status : false, criador : `criador`, mensagem : "Coloque o parametro: EMOJI2"})
+emojimix_api = `https://infinitybot-api.herokuapp.com/api/lzcanvas/emojimix?emoji1=${e1}&emoji2=${e2}&apikey=lz`
+res.type('png')
+res.send(await getBuffer(emojimix_api))
+})
+
+router.all('/tools/plaquinhas', async (req, res) => {
+  apikey = req.query.apikey;
+  n = req.query.nome;
+  if(apikey !== key) return res.sendFile(keyinexistente)
+  if (!n) return res.json({ status : false, criador : `criador`, mensagem : "Coloque o parametro: NOME"})
+  plaquinhas_api = await Kibar(`https://infinitybot-api.herokuapp.com/api/lzcanvas/plaquinhas?nome=${n}&apikey=lz`)
+  res.json({
+    status: true,
+    código: 999,
+    criador: `${criador}`,
+    resultado: {
+      img: `${plaquinhas_api.resultado.img}`,
+      aviso: `atualize a pagina ir outras plaquinhas`
+    }
+    })
+  })
+
+  router.all('/tools/gerardados', async (req, res) => {
+    apikey = req.query.apikey;
+    if(apikey !== key) return res.sendFile(keyinexistente)
+    dados_api = await Kibar(`https://infinitybot-api.herokuapp.com/api/tools/gerarcpf?apikey=lz`)
+    res.json({
+      status: true,
+      código: 999,
+      criador: `${criador}`,
+      resultado: {
+        cpf: `${dados_api.resultado.cpf}`,
+        nome: `${dados_api.resultado.nome}`,
+        nascimento: `${dados_api.resultado.nascimento}`,
+        sexo: `${dados_api.resultado.sexo}`
+      }
+      })
+    })
+
+    router.all('/tools/cantadas', async (req, res) => {
+      apikey = req.query.apikey;
+      if(apikey !== key) return res.sendFile(keyinexistente)
+      cantadas_api = await Kibar(`https://infinitybot-api.herokuapp.com/api/tools/cantadas?apikey=lz`)
+      res.json({
+        status: true,
+        código: 999,
+        criador: `${criador}`,
+        resultado: {
+          cantada: `${cantadas_api.resultado.cantada}`,
+        }
+        })
+      })
+
+      router.all('/tools/metadinha', async (req, res) => {
+        apikey = req.query.apikey;
+        if(apikey !== key) return res.sendFile(keyinexistente)
+        metadinha_api = await Kibar(`https://infinitybot-api.herokuapp.com/api/tools/metadinha?apikey=lz`)
+        res.json({
+          status: true,
+          código: 999,
+          criador: `${criador}`,
+          resultado: {
+            parte_feminina: `${metadinha_api.resultado.parte_feminina}`,
+            parte_masculina: `${metadinha_api.resultado.parte_masculina}`
+          }
+          })
+        })
 
 router.all('/loli', async (req, res) => {
   apikey = req.query.apikey;
