@@ -12,12 +12,14 @@
 
 Uma Base Simples Para Devs.
 ```bash
----------- Novidades Da V1.5 ----------
+---------- Novidades Da V2 ----------
+    
+- Design Dos Docs Alterado
     
 [- 1 Novo Menu De Api -]
-- TOOLS
+- TextPro
 
-quando bater 800 inscritos eu solto a v2 com varias novas api's :)
+rumo aos 800 inscritos :)
 ```
 
 - [Video Ensinando Como Instalar ( Clique Aqui )](https://www.youtube.com/watch?v=uevAtSsbJIU&t=12s)
