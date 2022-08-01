@@ -33,8 +33,6 @@ caso duvidas entre em contato! ( Clique Em Cima )
 - [Meu Zap](https://wa.me/5562991514026)
 
 ----------- Area De Downloads -----------
-    
-    <a href="https://heroku.com/deploy?template=https://github.com/alexandrevicenzi/shorter"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy" /></a>
   
 - [Baixar Termux 118 ( Clique )](https://www.apkmirror.com/apk/fredrik-fornwall/termux-fdroid-version/termux-fdroid-version-0-118-0-release/termux-fdroid-version-0-118-0-android-apk-download/download/)
     
