@@ -1,4 +1,4 @@
-# </Lz Base Api V1.5/>
+# </Lz Base Api V2/>
 <div align="center">
 </div>
 <p align="center">
