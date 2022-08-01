@@ -1,4 +1,4 @@
-# </Lz Base Api V1/>
+# </Lz Base Api V1.5/>
 <div align="center">
 </div>
 <p align="center">
@@ -12,19 +12,15 @@
 
 Uma Base Simples Para Devs.
 ```bash
----------- Novidades Da V1 ----------
+---------- Novidades Da V1.5 ----------
     
-[- 3 Novos Menus De Api's -]
-- Youtube
-- Canvas
-- Nsfw
+[- 1 Novo Menu De Api -]
+- TOOLS
 
 quando bater 800 inscritos eu solto a v2 com varias novas api's :)
 ```
 
-- [Video Ensinando Como Instalar ( Clique Aqui )](https://youtube.com)
-    
-- [Caso Queira Baixar o Zip Do Rest ( Clique Aqui )](https://www.mediafire.com/file/72x5a5vsugrfq6p/lz-base-api.zip/file)
+- [Video Ensinando Como Instalar ( Clique Aqui )](https://www.youtube.com/watch?v=uevAtSsbJIU&t=12s)
  
 ----------- Para Duvidas -----------
     
@@ -68,5 +64,3 @@ git push heroku master
 ``` 
 
   ------------------------------------------------------------------------------------
-
-"# lzbase-api" 
