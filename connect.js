@@ -4,7 +4,7 @@ var cors = require('cors')
 var morgan = require('morgan');
 var secure = require('ssl-express-www')
 
-const PORT = process.env.PORT || 8080
+const PORT = 3000
 
 var mainrouter = require('./apis')
 
